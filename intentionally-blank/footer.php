@@ -17,6 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <script src="https://kit.fontawesome.com/458d403d73.js" crossorigin="anonymous"></script>
 
 <!-- FOOTER -->
+<style>
+    .footer li i{
+        margin-right: 0 !important;
+    }
+</style>
 <footer class="footer">
     <div class="footer-meta">
         <div class="container text-center">

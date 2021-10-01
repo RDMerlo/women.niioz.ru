@@ -35,7 +35,10 @@ $arSponsors3 = $arSponsorPartner1['sponsor'][5];
     }
 </style>
 
-<section class="page-section white-bg light" id="partners">
+<section id="partners">
+    <br>
+    <br>
+<section class="page-section white-bg light" >
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-xs-12" style="width: auto;">
@@ -76,16 +79,17 @@ $arSponsors3 = $arSponsorPartner1['sponsor'][5];
 									<img style="width: 250px" src="https://women.niioz.ru/wp-content/themes/intentionally-blank/assets/img/partner/nii-logo.svg" alt=""/>
 								</a>
 							</div>
-                            <div class="block2" data-animation="fadeInUp" data-animation-delay="300" >
-                                <a target="_blank" href="https://content-foundation.org/">
-                                    <img style="width: 200px" src="https://women.niioz.ru/wp-content/themes/intentionally-blank/assets/img/partner/logo-fondkontent.png" alt="" />
-                                </a>
-                            </div>
+<!--                            <div class="block2" data-animation="fadeInUp" data-animation-delay="300" >-->
+<!--                                <a target="_blank" href="https://content-foundation.org/">-->
+<!--                                    <img style="width: 200px" src="https://women.niioz.ru/wp-content/themes/intentionally-blank/assets/img/partner/logo-fondkontent.png" alt="" />-->
+<!--                                </a>-->
+<!--                            </div>-->
 						</div>
 					</div>
 <!--				</div>-->
             </div>
         </div>
     </div>
+</section>
 </section>
 <!-- /PAGE SPONSORS -->

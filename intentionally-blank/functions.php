@@ -1,4 +1,12 @@
 <?php
+
+//update_option('siteurl', 'http://womenhealth.ru/');
+//update_option('home', 'http://womenhealth.ru/');
+
+//update_option('siteurl', 'https://women.niioz.ru');
+//update_option('home', 'https://women.niioz.ru');
+
+
 /**
  * Intentionally Blank Theme functions
  *
@@ -102,6 +110,9 @@ function theme_enqueue_styles()
     wp_enqueue_script('theme', $assets_uri . 'js/theme.js', array('jquery', 'jquery-plugin'), rand(1, 999999), true);
     wp_enqueue_script('custom', $assets_uri . 'js/custom.js', array(), rand(1, 999999), true);
     wp_enqueue_script('fancybox', $assets_uri . 'js/fancybox/jquery.fancybox.js', array(), rand(1, 999999), true);
+
+
+
 
 
 }
@@ -617,6 +628,9 @@ function true_custom($column, $id){
     }
 }
 
+add_filter('excerpt_more', function($more) {
+    return '...';
+});
 /*
  * Для вывода ID страниц в админке
  */
@@ -639,8 +653,17 @@ add_action('manage_posts_custom_column', 'true_custom', 5, 2);
  */
 
 /** Блок Текст контент */
-function blockTextContent($id)
+function blockTextContent(int $id, $iconTitle = "fa-info")
 {
+    $sTitle = get_field('title_ru', $id);
+    if ($sTitle):
+        ?>
+        <h1 class="section-title">
+            <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa crcle fa-stack-2x"></i><i class="fa <?=$iconTitle;?> fa-stack-1x"></i></span></span>
+            <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner"><?=$sTitle?><small></small></span>
+        </h1>
+    <?
+    endif;
     ?>
     <br>
     <div class="row">
@@ -665,12 +688,15 @@ function blockTextContent($id)
 function blockDirectionsPrograms($id)
 {
     $arSections = CFS()->get('sections_ru', $id);
-    if ($arSections): ?>
+    $arTitle = CFS()->get('programs_title_ru', $id);
+    if ($arTitle): ?>
         <br>
         <h1 class="section-title">
-            <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa crcle fa-stack-2x"></i><i class="fa fa-info fa-stack-1x"></i></span></span>
-            <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner"><?=CFS()->get('programs_title_ru', $id)?><small></small></span>
+            <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa crcle fa-stack-2x"></i><i class="fa <?=$iconTitle;?> fa-stack-1x"></i></span></span>
+            <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner"><?=$arTitle;?><small></small></span>
         </h1>
+    <?php endif;
+    if ($arSections): ?>
 <!--        <div class="panel panel-default">-->
             <div class="panel-body about-ul">
                 <ul>
@@ -853,24 +879,16 @@ function blockTextNextOpinions($id, $funcNextText = null)
 }
 
 /** Блок Спикеры */
-function blockSpeakers($id)
+function blockSpeakers($id, $iconTitle = "fa-info")
 {
-    $sSpeakersTitle = CFS()->get('speakers_title_ru', $id);
     $arSpeakers = CFS()->get('speakers_ru', $id);
 
-//    if ($sSpeakersTitle): ?>
-<!--        <br>-->
-<!--        <div class="panel panel-default">-->
-<!--            <div class="panel-heading">-->
-<!--                <div class="fw-600">-->
-<!--                    --><?//=$sSpeakersTitle?>
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    --><?//endif;?>
-    <? if ($sSpeakersTitle): ?>
+    $sSpeakersTitle = CFS()->get('speakers_title_ru', $id);
+
+    if ($sSpeakersTitle): ?>
+    <br>
     <h1 class="section-title">
-        <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa crcle fa-stack-2x"></i><i class="fa fa-user fa-stack-1x"></i></span></span>
+        <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa crcle fa-stack-2x"></i><i class="fa <?=$iconTitle;?> fa-stack-1x"></i></span></span>
         <span data-animation="fadeInUp" data-animation-delay="500" class="title-inner"><?=$sSpeakersTitle;?><small> </small></span>
     </h1>
     <?endif;?>
@@ -963,4 +981,60 @@ function blockTextNextTable($id, $funcNextText = null)
         </div>
     </div>
     <?
+}
+
+/**
+ * Выдает ссылку на главную страницу, либо если мы уже на главной, то пустую строку
+ * @return string
+ */
+function mainPageLink() : string
+{
+    $sHref = '';
+    if(!is_front_page()){
+        $sHref = get_site_url() . '/';
+    }
+    return $sHref;
+}
+
+/**
+ * Получить трансляции 2021 года
+ * @return array
+ */
+function getStreams() : array
+{
+    $arRes = [];
+    $arArgs = [
+        'post_type' => 'streams_2021',
+        'post_status' => 'publish',
+        'posts_per_page' => '-1',
+        'orderby'   => array(
+            'post_date' =>'ASC',
+        ),
+    ];
+    $obStreams = new WP_Query($arArgs);
+    while ($obStreams->have_posts()) {
+        $obStreams->the_post();
+        $iId = get_the_ID();
+        $sTitle = get_field('stream_title', $iId);
+        $sLabel = get_field('stream_label', $iId);
+        $sContent = get_field('stream_content', $iId);
+        $sStartTime = get_field('stream_start_time', $iId);
+        $sEndTime = get_field('stream_end_time', $iId);
+        $sStreamType= get_field('stream_type', $iId);
+        $sStreamPlace= get_field('stream_place', $iId);
+        $sStreamLink= get_field('stream_link', $iId);
+
+        $arRes[] = [
+            'id' => $iId,
+            'title' => $sTitle,
+            'label' => $sLabel,
+            'content' => $sContent,
+            'start_time' => $sStartTime,
+            'end_time' => $sEndTime,
+            'place' => $sStreamPlace,
+            'type' => $sStreamType,
+            'link' => $sStreamLink,
+        ];
+    }
+    return $arRes;
 }

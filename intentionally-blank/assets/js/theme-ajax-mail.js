@@ -497,6 +497,7 @@ $(function () {
         if (videoFile!=null)
             fd.append('video_file', videoFile);
 
+        $form.find('button').addClass('button_disabled');
 
         fd.append('action', 'add_participant');
         console.log("32\n");
@@ -527,6 +528,7 @@ $(function () {
                     '');
                 // $form[0].reset();
             }
+            $form.find('button').removeClass('button_disabled');
             // $form[0].reset();
         }).fail(function (result) {
             console.log('failed');
@@ -538,6 +540,7 @@ $(function () {
                 '<strong>' + errorMsg + '</strong>' +
                 '</div>' +
                 '');
+            $form.find('button').removeClass('button_disabled');
             return false;
         });
         return false;

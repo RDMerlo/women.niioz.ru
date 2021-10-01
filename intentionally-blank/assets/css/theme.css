@@ -83,27 +83,13 @@
 /* font-family: 'Roboto Slab', serif; */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
 
-/*@font-face{*/
-/*  font-family: 'roboto-medium';*/
-/*  src:  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot');*/
-/*  src:  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot#iefix') format('embedded-opentype'),*/
-/*  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.woff') format('woff'),*/
-/*  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.svg') format('svg');*/
-/*}*/
-/*@font-face{*/
-/*  font-family: 'roboto-medium';*/
-/*  src:  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot');*/
-/*  src:  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot#iefix') format('embedded-opentype'),*/
-/*  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.woff') format('woff'),*/
-/*  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.svg') format('svg');*/
-/*}*/
-/*@font-face{*/
-/*  font-family: 'roboto-medium';*/
-/*  src:  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot');*/
-/*  src:  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets//fonts/ROBOTO-MEDIUM.eot#iefix') format('embedded-opentype'),*/
-/*  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets//fonts/ROBOTO-MEDIUM.woff') format('woff'),*/
-/*  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets//fonts/ROBOTO-MEDIUM.svg') format('svg');*/
-/*}*/
+@font-face{
+  font-family: 'roboto-medium';
+  src:  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot');
+  src:  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.eot#iefix') format('embedded-opentype'),
+  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.woff') format('woff'),
+  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-MEDIUM.svg') format('svg');
+}
 @font-face{
   font-family: 'roboto-medium';
   src:  url('../fonts/ROBOTO-MEDIUM.eot');
@@ -112,27 +98,13 @@
   url('../fonts/ROBOTO-MEDIUM.svg') format('svg');
 }
 
-/*@font-face{*/
-/*  font-family: 'roboto-light';*/
-/*  src:  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot');*/
-/*  src:  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot#iefix') format('embedded-opentype'),*/
-/*  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.woff') format('woff'),*/
-/*  url('https://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.svg') format('svg');*/
-/*}*/
-/*@font-face{*/
-/*  font-family: 'roboto-light';*/
-/*  src:  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot');*/
-/*  src:  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot#iefix') format('embedded-opentype'),*/
-/*  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.woff') format('woff'),*/
-/*  url('https://leaderzoh.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.svg') format('svg');*/
-/*}*/
-/*@font-face{*/
-/*  font-family: 'roboto-light';*/
-/*  src:  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot');*/
-/*  src:  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot#iefix') format('embedded-opentype'),*/
-/*  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.woff') format('woff'),*/
-/*  url('http://hl.niioz.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.svg') format('svg');*/
-/*}*/
+@font-face{
+  font-family: 'roboto-light';
+  src:  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot');
+  src:  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.eot#iefix') format('embedded-opentype'),
+  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.woff') format('woff'),
+  url('https://womenforhealth.ru/wp-content/themes/intentionally-blank/assets/fonts/ROBOTO-LIGHT.svg') format('svg');
+}
 @font-face{
   font-family: 'roboto-light';
   src:  url('../fonts/ROBOTO-LIGHT.eot');
@@ -278,7 +250,7 @@ body.boxed {
 
 .wide .page-section,
 .boxed .page-section > .container {
-    padding-top: 30px;
+    padding-top: 80px;
     padding-bottom: 10px;
     position: relative;
     /*overflow: hidden; /* small devices */
@@ -718,7 +690,8 @@ hr.page-divider.small:after {
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    padding: 15px 35px;
+    /*padding: 15px 35px;*/
+    padding: 15px 5px;
 
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;

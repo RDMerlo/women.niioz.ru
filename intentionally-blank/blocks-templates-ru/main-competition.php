@@ -5,7 +5,10 @@ $sContentAfterForm = get_field('content_after_form_ru', 962);
 $sAboutEstimate = get_field('about_estimate', 962);
 $arMotivateFile = get_field('motivate_file', 962);
 ?>
-<section class="page-section" id="competition">
+<section id="competition">
+<br>
+<br>
+<section class="page-section light" >
 
     <div class="container">
 
@@ -92,8 +95,11 @@ $arMotivateFile = get_field('motivate_file', 962);
 
         </style>
 
-        <section class="page-section" id="participiant">
-            <h3 align="center">До закрытия конкурса осталось: </h3>
+        <section id="participiant">
+        <br>
+        <br>
+        <section class="page-section light" >
+            <h3 align="center">До окончания приема заявок осталось: </h3>
             <div id="clock">
                 <?php echo do_shortcode('[timer-countdown]'); ?>
             </div>
@@ -455,6 +461,7 @@ $arMotivateFile = get_field('motivate_file', 962);
                 </div>
             </div>
         </section>
+        </section>
         <div class="row margin-top-20">
             <div class="col-lg-12">
                 <?= $sContentAfterForm ?>
@@ -462,7 +469,7 @@ $arMotivateFile = get_field('motivate_file', 962);
         </div>
     </div>
 </section>
-
+</section>
 
 
 

@@ -73,48 +73,134 @@ jQuery( document ).ready(function() {
         }
     });
 
+    /* Закрыть остальные вкладки */
+    function closeOtherButtonTab(thisButtonName='')
+    {
+        let obj = {
+            "btn-uslovia": 'uslovia-uchastia',
+            "btn-cs-streams": 'cs-streams-block',
+            "btn-library-open": 'library-block',
+            "btn-news-open": 'news-block'
+        };
+
+        $.each(obj, function(key, value)
+        {
+            if (key != thisButtonName)
+            {
+                if($('.' + key).hasClass('active-open-btn'))
+                {
+                    console.log("key=" + key + " value=" + value);
+                    $('.' + key).removeClass('active-open-btn');
+                    $('.' + value).slideToggle("slow");
+                }
+            }
+        });
+
+    }
+
     $('.btn-uslovia').on('click', function () {
-        switch (window.location.href) {
-            case 'https://socforum.niioz.ru/en/':
-                if ($(this).text() === "the terms of participation") {
-                    $(this).text("hide terms");
-                } else {
-                    $(this).text("the terms of participation");
-                }
-                break;
-            case 'https://socforum.niioz.ru/ru/':
-                if ($(this).text() === "условия участия") {
-                    $(this).text("скрыть условия");
-                } else {
-                    $(this).text("условия участия");
-                }
-                break;
-            case 'https://socforum.niioz.ru/':
-                if ($(this).text() === "условия участия") {
-                    $(this).text("скрыть условия");
-                } else {
-                    $(this).text("условия участия");
-                }
-                break;
+
+        if ($('.btn-uslovia').hasClass('active-open-btn')){
+            $('.btn-uslovia').removeClass('active-open-btn');
+            const el = document.getElementById('linkShowHidden');
+            el.scrollIntoView();
+        }else{
+            closeOtherButtonTab('btn-uslovia');
+            $('.btn-uslovia').addClass('active-open-btn');
         }
-
-
-
         $('.uslovia-uchastia').slideToggle("slow");
     });
 
+    // $('.btn-marathonprogram').on('click', function () {
+    //     if($(this).hasClass('active-open-btn')){
+    //         $(this).removeClass('active-open-btn');
+    //     }else{
+    //         $(this).addClass('active-open-btn');
+    //     }
+    //     $('.marathon-program').slideToggle("slow");
+    //
+    //     // const el = document.getElementById('linkShowHidden');
+    //     // el.scrollIntoView();
+    // });
+
+    $('.btn-cs-streams').on('click', function () {
+
+        if($('.btn-cs-streams').hasClass('active-open-btn')){
+            $('.btn-cs-streams').removeClass('active-open-btn');
+            const el = document.getElementById('linkShowHidden');
+            el.scrollIntoView();
+        }else{
+            closeOtherButtonTab('btn-cs-streams');
+            $('.btn-cs-streams').addClass('active-open-btn');
+
+        }
+        $('.cs-streams-block').slideToggle("slow");
+
+        // const el = document.getElementById('linkShowHidden');
+        // el.scrollIntoView();
+    });
+
+    $('.btn-library-open').on('click', function () {
+
+        if($('.btn-library-open').hasClass('active-open-btn')){
+            $('.btn-library-open').removeClass('active-open-btn');
+            const el = document.getElementById('linkShowHidden');
+            el.scrollIntoView();
+        }else{
+            closeOtherButtonTab('btn-library-open');
+            $('.btn-library-open').addClass('active-open-btn');
+
+        }
+        $('.library-block').slideToggle("slow");
+
+        // const el = document.getElementById('linkShowHidden');
+        // el.scrollIntoView();
+    });
+
+    $('.btn-news-open').on('click', function () {
+
+        if($('.btn-news-open').hasClass('active-open-btn')){
+            $('.btn-news-open').removeClass('active-open-btn');
+            const el = document.getElementById('linkShowHidden');
+            el.scrollIntoView();
+        }else{
+            closeOtherButtonTab('btn-news-open');
+            $('.btn-news-open').addClass('active-open-btn');
+
+        }
+        $('.news-block').slideToggle("slow");
+
+        // const el = document.getElementById('linkShowHidden');
+        // el.scrollIntoView();
+    });
+
+
     $('.btn-estimate').on('click', function () {
 
+        // $('.about-estimate').slideToggle("slow");
+        // let headerH = 80;
+        // $('.sf-menu a').removeClass('active');
+        // $(this).addClass('active');
+        //
+        //
+        //     const el = document.getElementById('linkShowHidden');
+        //     el.scrollIntoView();
+        // $('html, body').animate({
+        //     scrollTop: $('.btn-estimate').offset().top - headerH  + 'px'
+        // }, {
+        //     duration: 1200,
+        //     easing: 'easeInOutExpo'
+        // });
+
+
+        if($('.btn-estimate').hasClass('active')){
+            $('.btn-estimate').removeClass('active');
+            //const el = document.getElementById('linkShowHidden');
+            //el.scrollIntoView();
+        }else{
+            $('.btn-estimate').addClass('active');
+        }
         $('.about-estimate').slideToggle("slow");
-        let headerH = 80;
-        $('.sf-menu a').removeClass('active');
-        $(this).addClass('active');
-        $('html, body').animate({
-            scrollTop: $('.btn-estimate').offset().top - headerH  + 'px'
-        }, {
-            duration: 1200,
-            easing: 'easeInOutExpo'
-        });
     });
 
     $('.open-modal-konkurs').on('click', function () {

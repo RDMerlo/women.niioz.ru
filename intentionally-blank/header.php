@@ -50,24 +50,8 @@
     <meta charset="<?php bloginfo('charset'); ?>">
 
     <?php wp_head();
-//    if($_SERVER['SERVER_NAME'] == 'leaderzoh.niioz.ru'){
-//        $host = 'leaderzoh.niioz.ru';
-//    }else{
-//        $host = 'hl.niioz.ru';
-//    }
+        ini_set('display_errors', 'Off');
     ?>
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/css/custom.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/bootstrap/css/bootstrap.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/fontawesome/css/font-awesome.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/bootstrap-select/bootstrap-select.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/owlcarousel2/assets/owl.carousel.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/owlcarousel2/assets/owl.theme.default.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/prettyphoto/css/prettyPhoto.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/animate/animate.min.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/plugins/countdown/jquery.countdown.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/css/theme.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/css/theme-green-2.css">-->
-<!--    <link rel="stylesheet" href="--><?//="http://{$host}"?><!--/wp-content/themes/intentionally-blank/assets/js/fancybox/jquery.fancybox.css">-->
 
 </head>
 
@@ -97,7 +81,7 @@
                 <!-- Logo -->
                 <div class='logo-pril'>
                     <div class="logo">
-                        <a href="#home" class="scroll-to">
+                        <a href="<?=mainPageLink()?>#home" class="scroll-to">
                             <img src="<?php echo ASSETSURI ?>img/logo-hl7.png">
                         </a>
                     </div>
@@ -109,14 +93,14 @@
 
                     <nav class="navigation closed clearfix">
                         <ul class="sf-menu nav">
-                            <li><a href="#about">О проекте</a></li>
-                            <li><a href="#speakers">Команда</a></li>
-                            <li><a href="#competition">Конкурсный отбор</a></li>
-                            <li class="marker"><a href="#participiant">Подать заявку</a></li>
-                            <li><a href="#healthprofile">Цифровой профиль ЗОЖ</a></li>
-                            <li><a href="#ewf">ЕЖФ-2021</a></li>
-                            <li><a href="#partners">Партнеры</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
+                            <li><a href="<?=mainPageLink()?>#about">О проекте</a></li>
+                            <li><a href="<?=mainPageLink()?>#ewf">Марафон</a></li>
+                            <li><a href="<?=mainPageLink()?>#competition">Конкурсный отбор</a></li>
+                            <li class="marker"><a href="<?=mainPageLink()?>#participiant">Подать заявку</a></li>
+                            <li><a href="<?=mainPageLink()?>#healthprofile">Цифровой профиль ЗОЖ</a></li>
+                            <li><a href="<?=mainPageLink()?>#partners">Партнеры</a></li>
+                            <li><a href="<?=mainPageLink()?>#speakers">Команда</a></li>
+                            <li><a href="<?=mainPageLink()?>#contacts">Контакты</a></li>
                         </ul>
                     </nav>
 

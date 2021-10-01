@@ -221,6 +221,10 @@ span.filter-option{
     display: none;
 }
 
+.marathon-program{
+    display: none;
+}
+
 .konkurs-item{
     border: 2px solid white !important;
 }

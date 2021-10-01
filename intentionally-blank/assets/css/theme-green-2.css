@@ -13,7 +13,8 @@
   border: 0.9em solid #ffffff;
 }
 body {
-  background: #fbfbfb;
+  background: #fff;
+  /*background: #fbfbfb;*/
   color: #6d7a83;
 }
 .wide .page-section.light,

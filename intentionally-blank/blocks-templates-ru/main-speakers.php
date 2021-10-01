@@ -5,9 +5,10 @@ $sTitle = get_field('title_ru', 1125);
 ?>
 
 <!-- PAGE SPEAKERS -->
+<section id="speakers">
 
-<section class="page-section white-bg" id="participants">
-    <section class="page-section light" id="speakers">
+<section class="page-section white-bg">
+    <section class="page-section" >
         <div class="container">
             <h1 class="section-title">
             <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i
@@ -21,4 +22,5 @@ $sTitle = get_field('title_ru', 1125);
 
         </div>
     </section>
+</section>
     <!-- /PAGE SPEAKERS -->

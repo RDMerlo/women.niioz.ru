@@ -1,7 +1,10 @@
 <?php
     $sTitle = get_field('title_ru', 915);
 ?>
-<section class="page-section" id="contacts">
+<section id="contacts">
+    <br>
+    <br>
+<section class="page-section" >
     <div class="container">
 
         <div class="row">
@@ -92,4 +95,5 @@
         <!-- /Contact form -->
 
     </div>
+</section>
 </section>

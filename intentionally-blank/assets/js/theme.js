@@ -64,25 +64,29 @@ var theme = function () {
     // Smooth scrolling
     // ---------------------------------------------------------------------------------------
     function handleSmoothScroll(){
-        $('.sf-menu a, .scroll-to').click(function () {
+        if ( !(/Android|iPhone|BlackBerry|webOS|iPad|iPod/i.test(navigator.userAgent) ))
+        {
+            $('.sf-menu a, .scroll-to').click(function () {
 
-            if ($(this).hasClass('control')) {}
-            else {
+                if ($(this).hasClass('control')) {
+                } else {
 
-                //var headerH = $('header').outerHeight();
-                var headerH = 80;
-                $('.sf-menu a').removeClass('active');
-                $(this).addClass('active');
-                $('html, body').animate({
-                    scrollTop: $($(this).attr('href')).offset().top - headerH  + 'px'
-                }, {
-                    duration: 1200,
-                    easing: 'easeInOutExpo'
-                });
-                return false;
+                    //var headerH = $('header').outerHeight();
+                    var headerH = 80;
+                    $('.sf-menu a').removeClass('active');
+                    $(this).addClass('active');
+                    $('html, body').animate({
+                        scrollTop: $($(this).attr('href')).offset().top - headerH + 'px'
+                    }, {
+                        duration: 1200,
+                        easing: 'easeInOutExpo'
+                    });
+                    return false;
 
-            }
-        });
+                }
+
+            });
+        }
     }
 
     // prettyPhoto
